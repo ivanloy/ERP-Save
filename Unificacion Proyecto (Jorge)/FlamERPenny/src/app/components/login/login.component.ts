@@ -21,15 +21,7 @@ export class LoginComponent implements OnInit {
 
     this.firebase.LoginUser(this.user_name.toString(),this.user_password.toString());
 
-    if(this.user_name == ""){
-
-      alert("instroduce email");
-
-    }else if(this.user_password == ""){
-
-      alert("introduce password");
-    }
-
+    
    
   }
 

@@ -26,7 +26,7 @@
             <input [(ngModel)]="user_password" name="pass" id="pass" type="password" class="form-control" placeholder=" " required/>
             <label class="form-control-placeholder" for="pass">Password</label>
         </div>
-        <button (click)="login()">GO</button>
+        <button (click)="login()" routerLink='/home'>GO</button>
 
 
       </form>
@@ -35,7 +35,7 @@
 
     </div>
 
-    <p class="accounttext" routerLink="/register">Don't have an account? Get one!</p>
+    <p class="accounttext" routerLink='/register'>Don't have an account? Get one!</p>
 
   </div>
 

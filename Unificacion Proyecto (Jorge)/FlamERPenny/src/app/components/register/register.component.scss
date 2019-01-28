@@ -40,9 +40,15 @@ body{
 	outline: none;
 }
 
+.accountext:hover{
+
+  cursor: pointer;
+}
+
 hr{
   background-color: var(--marron);
   height: 4px;
+  border: none;
 
 }
 

@@ -36,10 +36,15 @@ body{
   outline: none;
 
 }
+.accounttext:hover{
+
+  cursor: pointer;
+}
 
 hr{
   background-color: var(--marron);
   height: 4px;
+  border: none;
 
 }
 
