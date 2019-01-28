@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FirebaseService } from '../services/firebase.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
  });
 
-  constructor(public firebase:FirebaseService) { }
+  constructor(public firebase:AuthService) { }
 
   ngOnInit() {}
 
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
 
 
 
-      this.firebase.createNewUser(this.registerForm.value.email.toString(), this.registerForm.value.password.toString());
+      this.firebase.Create(this.registerForm.value.email.toString(), this.registerForm.value.password.toString());
 
       
         

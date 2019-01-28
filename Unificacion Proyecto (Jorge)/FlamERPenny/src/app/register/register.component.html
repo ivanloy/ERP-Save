@@ -1,22 +1,49 @@
-<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
-<h2>Register</h2>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">Register</button>
-    </div>
-</form>
+<body>
+  
+        <div class="register-page">
+        
+            <img class="logo" src="../../assets/ERP logo.png">
+        
+            <div class="form">
+        
+              <p class="registertext">REGISTER</p>
+        
+              <hr>
+                      
+              <form class="register-form" name="form">
+        
+                  <div class="form-group">
+                    
+                    <input [(ngModel)]="email" type="email" name="email" id="email" class="form-control" placeholder=" " required/>
+                    <label class="form-control-placeholder" for="email">Email</label>
+                  </div>
+
+                  <div class="form-group">
+                    
+                        <input [(ngModel)]="email2" type="email" name="email" id="email2" class="form-control" placeholder=" " required/>
+                        <label class="form-control-placeholder" for="email2">Repeat email</label>
+                      </div>
+        
+        
+                  <div class="form-group">
+                    <input [(ngModel)]="user_password" name="pass" id="pass" type="password" class="form-control" placeholder=" " required/>
+                    <label class="form-control-placeholder" for="pass">Password</label>
+                </div>
+                <button (click)="login()">GO</button>
+        
+        
+              </form>
+        
+          
+        
+            </div>
+        
+            <p class="accountext" routerLink="/login">Already have an account? Log in!</p>
+        
+          </div>
+        
+        
+        
+          
+        
+        </body>
