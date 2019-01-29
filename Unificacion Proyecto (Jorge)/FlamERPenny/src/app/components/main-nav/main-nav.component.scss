@@ -1,14 +1,14 @@
 @import url(../../../variables.css);
 @import url(../../../styles.css);
 
-.logo{
 
+.logo{
   width: 50%;
   height: 50%;
   margin: auto;
   display: block;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 16px; 
 
 }
 
@@ -48,18 +48,18 @@ hr{
 
 .sidemenu{
   position: relative;
-
   background: var(--blanco);
   border-radius: 8px;
   margin: auto;
   width: 80%;
 
+  box-shadow: 6px 6px 6px var(--negroT);
 }
 
 .sidenav-container {
   height: 100%;
 }
-
+/*https://stackoverflow.com/questions/47707225/hide-and-show-angular-4-component-depending-on-route*/
 .sidenav {
   width: 200px;
 }

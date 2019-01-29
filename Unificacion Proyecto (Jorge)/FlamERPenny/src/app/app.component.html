@@ -1,7 +1,7 @@
 
 <body>
 
-    <app-main-nav></app-main-nav>
+    <app-main-nav *ngIf="router != '/login'"></app-main-nav>
     <router-outlet></router-outlet>
 
 </body>

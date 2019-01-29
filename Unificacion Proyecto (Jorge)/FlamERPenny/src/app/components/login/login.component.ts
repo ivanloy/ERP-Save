@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {AuthService} from '../../service/auth.service';
+import { getPreviousOrParentTNode } from '@angular/core/src/render3/state';
+import { getRootComponents } from '@angular/core/src/render3/discovery_utils';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +22,6 @@ export class LoginComponent implements OnInit {
     console.log(this.user_password);
 
     this.firebase.LoginUser(this.user_name.toString(),this.user_password.toString());
-
-    
    
   }
 

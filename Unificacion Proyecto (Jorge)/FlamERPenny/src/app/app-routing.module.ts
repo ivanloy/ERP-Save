@@ -9,7 +9,6 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
 
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'hamburger', component: MainNavComponent},
