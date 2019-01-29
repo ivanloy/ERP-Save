@@ -1,42 +1,75 @@
-html {
-    display: table;
+body {
+    position: relative;
     margin: auto;
+    font-family: 'bah';
+    color: var(--marron);   
 }
 
-body {
-    display: table-cell;
-    padding-left: 20px;
+
+.pagename{
+
+    font-size: 60px;
+    font-weight: bold;
+    margin: auto;
+    padding-top: 16px;
+}
+
+hr{
+    background-color: var(--marron);
+    height: 4px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border: none;
+  
+  }
+
+#menuicon{
+
+    font-size: 80px;
+
 }
 
 .div-home{
-    display: table;
+    margin: auto;
     text-align: center;
 
     /* modificable */
-    border-width:2px;
-    border-style:solid;
-    border-color:black;  
+    background: var(--blanco);
+    border-radius: 8px;
+ 
 }
 
-.div-home .my-div-home-item {
+.my-div-home-item {
+
+    margin: 32px;
     display: inline-block;
-    position: relative;
+    width: 400px;
+    padding-top: 128px; 
+    
 
-    /* modificable */
-    padding: 8px;
-    margin: 16px;
-    width: 200px;
-    height: 200px;
-    background-color: #E91E63;
 }
 
-.div-home .my-div-home-item .my-div-home-item-text {
-    position: absolute;
-    bottom: 0;
-    width: 92%;
+.button-warpper{
+    
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.div-home{
+
+    height: 90vh;
+    width: 85vw;
+    float: right;
+    margin-right: 32px; 
+    margin-top: -32px;
+
+}
+
+.my-div-home-item-text {
+    font-size: 50px;
     
     /* modificable */
-    border-width:2px;
-    border-style:solid;
-    border-color:black;
 }
