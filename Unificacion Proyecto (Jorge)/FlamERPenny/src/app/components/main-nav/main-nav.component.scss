@@ -3,12 +3,16 @@
 
 
 .logo{
-  width: 50%;
-  height: 50%;
+  width: 38%;
+  height: auto;
   margin: auto;
   display: block;
-  margin-top: 16px;
-  margin-bottom: 16px; 
+
+
+
+    
+    margin: auto;
+    padding-top: 16px;
 
 }
 
@@ -26,7 +30,7 @@ hr{
   color: var(--marron);
   text-align: center;
   margin: auto;
-  display: list-item;
+  display: block;
   margin-top: 32px;
   margin-bottom: 32px;
 
@@ -47,21 +51,31 @@ hr{
 
 
 .sidemenu{
-  position: relative;
   background: var(--blanco);
   border-radius: 8px;
-  margin: auto;
+
   width: 80%;
 
   box-shadow: 6px 6px 6px var(--negroT);
 }
 
-.sidenav-container {
-  height: 100%;
-}
 
 .sidenav {
-  width: 200px;
+    margin: auto;
+    text-align: center;
+
+   
+    border-radius: 8px;
+
+    height: 90vh;
+    width: 10vw;
+    float: left;
+
+}
+
+.sidenav-container{
+
+  height: 100%;
 }
 
 

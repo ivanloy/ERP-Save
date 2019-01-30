@@ -56,7 +56,15 @@ hr{
 .my-div-home-item:focus{
 
     outline: none;
+
 }
+
+.my-div-home-item:hover{
+
+    cursor: pointer;
+    
+}
+
 
 .button-warpper{
     

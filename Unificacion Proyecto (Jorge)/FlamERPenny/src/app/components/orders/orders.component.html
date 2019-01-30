@@ -2,9 +2,15 @@
 <body>
 <div class="div-home">
 
+  <div class="buttoncontainer">
+      <button class="newbutton">NEW</button>
+  </div>
 
 
  <p class="pagename">ORDERS</p>
+
+
+ <input type="text" class="search" placeholder="Search..">
  <hr>
 
 
@@ -40,10 +46,10 @@
   </ng-container>
 
   <ng-container cdkColumnDef="Acciones">
-    <th cdk-header-cell *cdkHeaderCellDef></th>
+    <th cdk-header-cell *cdkHeaderCellDef>Options</th>
     <td cdk-cell *cdkCellDef="let row">
-      <button value="Borrar" (click)="Borrar(row.id)">Borrar</button>
-      <a routerLink="/detail/{{row.id}}"><button value="Editar">Editar</button></a>
+      <i value="Borrar" (click)="Borrar(row.id)" class="material-icons">delete</i>
+      <i routerLink="/detail/{{row.id}}" class="material-icons">edit</i>
     </td>
   </ng-container>
 
