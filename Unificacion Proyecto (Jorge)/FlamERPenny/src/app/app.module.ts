@@ -15,6 +15,10 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { CdkTableModule } from '@angular/cdk/table';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { OrderService } from './service/order.service';
+import { ProductService } from './service/product.service';
 
 
 
@@ -24,7 +28,9 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     RegisterComponent,
     MainNavComponent,
-    HomeComponent
+    HomeComponent,
+    OrdersComponent,
+    OrderDetailsComponent
     
     
    
@@ -57,7 +63,7 @@ import { HomeComponent } from './components/home/home.component';
     CdkTableModule
     
   ],
-  providers: [AuthService],
+  providers: [AuthService, OrderService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

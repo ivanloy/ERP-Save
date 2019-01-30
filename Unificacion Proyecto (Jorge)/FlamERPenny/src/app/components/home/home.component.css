@@ -33,9 +33,14 @@ hr{
     margin: auto;
     text-align: center;
 
-    /* modificable */
     background: var(--blanco);
     border-radius: 8px;
+
+    height: 90vh;
+    width: 85vw;
+    float: right;
+    margin-right: 32px; 
+    margin-top: -32px;
  
 }
 
@@ -46,7 +51,11 @@ hr{
     width: 400px;
     padding-top: 128px; 
     
+}
 
+.my-div-home-item:focus{
+
+    outline: none;
 }
 
 .button-warpper{
@@ -55,18 +64,6 @@ hr{
   align-items: center;
 }
 
-
-
-
-.div-home{
-
-    height: 90vh;
-    width: 85vw;
-    float: right;
-    margin-right: 32px; 
-    margin-top: -32px;
-
-}
 
 .my-div-home-item-text {
     font-size: 50px;
