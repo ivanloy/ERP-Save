@@ -48,8 +48,9 @@ hr{
 
     margin: 32px;
     display: inline-block;
-    width: 400px;
-    padding-top: 128px; 
+    width: 15vw;
+    height: auto;
+    padding-top: 64px; 
     
 }
 

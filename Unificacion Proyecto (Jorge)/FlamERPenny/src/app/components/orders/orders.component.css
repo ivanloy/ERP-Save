@@ -6,6 +6,12 @@ body {
   color: var(--marron);   
 }
 
+.headercontainer{
+
+display: flex;
+
+}
+
 .newbutton{
 
   float: left;
@@ -43,7 +49,24 @@ body {
 
 .search{
 
+  font-family: 'bah';
   float: right;
+  border: none;
+  border-bottom: 2px solid var(--marron);
+  margin-top: 32px; 
+  margin-right: 32px;
+  font-size: var(--tamanoindice);
+}
+
+.search:focus{
+
+outline: none;
+
+}
+
+.searchcontainer{
+
+  width:33.33333%;
 }
 
 hr{
@@ -83,11 +106,13 @@ th{
 
 }
 
+
 td{
   padding-top: 8px;
   padding-bottom: 8px;
   font-size: 20px;
   color: var(--gris);
+  
 }
 
 /*td:hover{  //Preguntar si gustaria algo asi
