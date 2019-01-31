@@ -10,7 +10,7 @@ import { IOrder } from '../IOrder';
 })
 export class OrderService {
 
-  apiURLv: string = 'https://flamerpennyapi.azurewebsites.net/pedido/';
+ apiURLv: string = 'https://flamerpennyapi.azurewebsites.net/pedido/';
  apiURLv2: string = 'https://flamerpennyapi.azurewebsites.net/pedido/';
 
 

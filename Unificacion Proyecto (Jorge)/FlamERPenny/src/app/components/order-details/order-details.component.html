@@ -1,33 +1,38 @@
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<html>
+<body>
+<div class="div-home">
 
-<h2>Order details</h2>
+  <p class="pagename">ORDER DETAILS</p>
 
- <div class="izquierda">
+  <hr>
+
+  <div class="orderInfo">
+ <div class="peopleData">
         <ul>
-            <li style="font-size: 150%" >Customer: </li>
-            <li>{{Data.nombreCliente}}</li>
+            <p>Customer: </p>
+            <p>{{Data.nombreCliente}}</p>
         </ul>
 
 
         <ul>
-            <li style="font-size: 150%">Supplier: </li>
-            <li>{{Data.nombreVendedor}}</li>
+            <p>Supplier: </p>
+            <p>{{Data.nombreVendedor}}</p>
         </ul>
     </div>
  
-    <div class ="derecha">
+    <div class ="datesData">
         <ul>
-            <li style="font-size: 150%">Order date: </li>
-            <li>{{Data.fechaPedido}}</li>
+            <p>Order date: </p>
+            <p>{{Data.fechaPedido | date: 'dd/MM/yyyy'}}</p>
         </ul>
         <ul>
-            <li style="font-size: 150%">Dispatch Date: </li>
-            <li>{{Data.fechaEntrega}}</li>
+            <p>Dispatch Date: </p>
+            <p>{{Data.fechaEntrega | date: 'dd/MM/yyyy'}}</p>
         </ul>
     </div> 
+  </div>
 
-
+    <div class="tablecontainer">
     <table cdk-table [dataSource]="miLineasDePedido">
 
       <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
@@ -40,13 +45,13 @@
     
       <!-- precioVenta Column -->
       <ng-container cdkColumnDef="descripcion">
-        <th cdk-header-cell *cdkHeaderCellDef>descripcion</th>
+        <th cdk-header-cell *cdkHeaderCellDef>Descriprion</th>
         <td cdk-cell *cdkCellDef="let row">{{row.producto.descripcion}} </td>
       </ng-container>
     
       <!-- descripcion Column -->
       <ng-container cdkColumnDef="listaCategorias">
-        <th cdk-header-cell *cdkHeaderCellDef>listaCategorias</th>
+        <th cdk-header-cell *cdkHeaderCellDef>Category</th>
         <td cdk-cell *cdkCellDef="let row"> {{row.producto.listaCategorias[0].nombre}} </td>
       </ng-container>
     
@@ -57,31 +62,35 @@
       </ng-container>
 
       <ng-container cdkColumnDef="precioUnitario">
-        <th cdk-header-cell *cdkHeaderCellDef>precioUnitario</th>
+        <th cdk-header-cell *cdkHeaderCellDef>Unit price</th>
         <td cdk-cell *cdkCellDef="let row"> {{row.precioUnitario}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="impuestos">
-        <th cdk-header-cell *cdkHeaderCellDef>impuestos</th>
+        <th cdk-header-cell *cdkHeaderCellDef>Taxes</th>
         <td cdk-cell *cdkCellDef="let row"> {{row.impuestos}} </td>
       </ng-container>
     
       <ng-container cdkColumnDef="subtotal">
-        <th cdk-header-cell *cdkHeaderCellDef>subtotal</th>
+        <th cdk-header-cell *cdkHeaderCellDef>Subtotal</th>
         <td cdk-cell *cdkCellDef="let row"> {{row.subtotal}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="Acciones">
-        <th cdk-header-cell *cdkHeaderCellDef>Acciones</th>
+        <th cdk-header-cell *cdkHeaderCellDef>Options</th>
         <td cdk-cell *cdkCellDef="let row">
           <button value="Editar" (click)="Borrar(row.idPedido)">Borrar</button>
         </td>
       </ng-container>
 
     </table>
+  </div>
 
 
-              
+</div>
+
+</body>
+</html>        
    
          
 

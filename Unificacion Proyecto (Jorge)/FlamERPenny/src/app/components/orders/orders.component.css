@@ -84,9 +84,9 @@ hr{
 
   background: var(--blanco);
   border-radius: 8px;
-
   height: 90vh;
   width: 85vw;
+ 
   float: right;
   margin-right: 32px; 
   margin-top: -32px;
@@ -97,6 +97,17 @@ hr{
 
 margin: auto;
 width: 100%;
+border-collapse: collapse;
+border-spacing: 0;
+
+
+}
+
+.tablecontainer{
+
+  overflow-y:scroll;
+  height: auto;
+  width: 85vw;
 
 }
 
@@ -112,8 +123,13 @@ td{
   padding-bottom: 8px;
   font-size: 20px;
   color: var(--gris);
-  
+  overflow: hidden;
 }
+
+/*tr:nth-child(even){
+  
+  background-color: var(--marronClaro);
+}*/
 
 /*td:hover{  //Preguntar si gustaria algo asi
 
