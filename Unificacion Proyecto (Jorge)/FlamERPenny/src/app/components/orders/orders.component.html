@@ -5,7 +5,7 @@
   <div class="headercontainer">
 
   <div class="buttoncontainer">
-      <button class="newbutton" routerLink="/detail/1">NEW</button>
+      <button class="newbutton">NEW</button>
   </div>
 
  <p class="pagename">ORDERS</p>
@@ -22,7 +22,7 @@
 
 
 <div class="tablecontainer">
-<table cdk-table [dataSource]="Pedidos" class="table">
+<table cdk-table [dataSource]="Pedidos" class="ordertable">
 
   <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
   <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>

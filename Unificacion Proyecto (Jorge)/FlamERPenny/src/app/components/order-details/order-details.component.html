@@ -9,31 +9,27 @@
   <div class="orderInfo">
  <div class="peopleData">
         <ul>
-            <p>Customer: </p>
-            <p>{{Data.nombreCliente}}</p>
+            <p>Customer : {{Data.nombreCliente}}</p>
         </ul>
 
 
         <ul>
-            <p>Supplier: </p>
-            <p>{{Data.nombreVendedor}}</p>
+            <p>Supplier : {{Data.nombreVendedor}}</p>
         </ul>
     </div>
  
     <div class ="datesData">
         <ul>
-            <p>Order date: </p>
-            <p>{{Data.fechaPedido | date: 'dd/MM/yyyy'}}</p>
+            <p>Order date : {{Data.fechaPedido | date: 'dd/MM/yyyy'}}</p>
         </ul>
         <ul>
-            <p>Dispatch Date: </p>
-            <p>{{Data.fechaEntrega | date: 'dd/MM/yyyy'}}</p>
+            <p>Dispatch Date : {{Data.fechaEntrega | date: 'dd/MM/yyyy'}}</p>
         </ul>
     </div> 
   </div>
 
     <div class="tablecontainer">
-    <table cdk-table [dataSource]="miLineasDePedido">
+    <table cdk-table [dataSource]="miLineasDePedido" class="linestable">
 
       <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
       <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>
@@ -45,7 +41,7 @@
     
       <!-- precioVenta Column -->
       <ng-container cdkColumnDef="descripcion">
-        <th cdk-header-cell *cdkHeaderCellDef>Descriprion</th>
+        <th cdk-header-cell *cdkHeaderCellDef>Description</th>
         <td cdk-cell *cdkCellDef="let row">{{row.producto.descripcion}} </td>
       </ng-container>
     
@@ -79,7 +75,7 @@
       <ng-container cdkColumnDef="Acciones">
         <th cdk-header-cell *cdkHeaderCellDef>Options</th>
         <td cdk-cell *cdkCellDef="let row">
-          <button value="Editar" (click)="Borrar(row.idPedido)">Borrar</button>
+          <i value="Editar" (click)="Borrar(row.idPedido)" class="material-icons">delete</i>
         </td>
       </ng-container>
 

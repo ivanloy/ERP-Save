@@ -51,7 +51,6 @@ body {
   
     background: var(--blanco);
     border-radius: 8px;
-    height: 90vh;
     width: 85vw;
    
     float: right;
@@ -60,21 +59,18 @@ body {
   
   }
   
-  .table{
+  .linestable{
   
   margin: auto;
   width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  
+  height: 60vh;
   
   }
   
   .tablecontainer{
   
-    overflow-y:hidden;
-    height: auto;
-    width: 85vw;
+    overflow-y:scroll;
+  height: 60vh;
   
   }
   
