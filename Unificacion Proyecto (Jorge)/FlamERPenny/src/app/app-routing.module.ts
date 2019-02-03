@@ -6,6 +6,9 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { ClientsListComponent } from './components/clients-list/clients-list.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+
 
 
 const routes: Routes = [
@@ -16,7 +19,12 @@ const routes: Routes = [
   {path: 'hamburger', component: MainNavComponent},
   {path: 'home', component: HomeComponent},
   {path: 'orders', component: OrdersComponent},
-  {path: 'detail/:id', component: OrderDetailsComponent}
+  {path: 'detail/:id', component: OrderDetailsComponent},
+  {path: 'clients', component: ClientsListComponent},
+  {path: 'products', component: ProductsListComponent}
+
+
+
 
 ];
 

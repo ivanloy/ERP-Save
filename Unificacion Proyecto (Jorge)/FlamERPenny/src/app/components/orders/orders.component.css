@@ -142,7 +142,7 @@ td{
 
 .material-icons:hover{
 
-  color: var(--marron);
+  
   outline: none;
   cursor: pointer;
 }
@@ -150,6 +150,6 @@ td{
 .material-icons{
 
   font-size: 32px;
-
+  
 }
 

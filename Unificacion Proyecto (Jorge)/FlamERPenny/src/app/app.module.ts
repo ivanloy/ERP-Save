@@ -19,6 +19,10 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { OrderService } from './service/order.service';
 import { ProductService } from './service/product.service';
+import { ClientsListComponent } from './components/clients-list/clients-list.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { MatChipsModule } from '@angular/material/chips';
+import { ProductsListComponent } from './components/products-list/products-list.component';
 
 
 
@@ -30,7 +34,9 @@ import { ProductService } from './service/product.service';
     MainNavComponent,
     HomeComponent,
     OrdersComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    ClientsListComponent,
+    ProductsListComponent
     
     
    
@@ -60,7 +66,9 @@ import { ProductService } from './service/product.service';
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    CdkTableModule
+    CdkTableModule,
+    NgxPaginationModule,
+    MatChipsModule
     
   ],
   providers: [AuthService, OrderService, ProductService],
