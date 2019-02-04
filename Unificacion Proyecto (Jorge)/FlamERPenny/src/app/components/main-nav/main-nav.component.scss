@@ -3,16 +3,11 @@
 
 
 .logo{
-  width: 38%;
+  width: 40%;
   height: auto;
   margin: auto;
   display: block;
-
-
-
-    
-    margin: auto;
-    padding-top: 16px;
+  padding-top: 16px;
 
 }
 
@@ -31,8 +26,7 @@ hr{
   text-align: center;
   margin: auto;
   display: block;
-  margin-top: 32px;
-  margin-bottom: 32px;
+  padding-bottom: 4vh;
 
   &:focus{
     outline: none;
@@ -43,10 +37,17 @@ hr{
   }
 }
 
-.back{
-  padding-top: 64px;   /*Esto puede que de problemas y no me gusta*/
-  padding-bottom: 8px;
 
+i{
+  display: block;
+  float: center;
+  text-align: center;
+
+}
+
+.listado{
+
+  text-align: center;
 }
 
 
@@ -67,7 +68,7 @@ hr{
    
     border-radius: 8px;
 
-    height: 90vh;
+    height: 80vh;
     width: 10vw;
     float: left;
 
@@ -79,10 +80,6 @@ hr{
 }
 
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
+
 
 

@@ -8,6 +8,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { ClientsListComponent } from './components/clients-list/clients-list.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 
@@ -21,7 +22,9 @@ const routes: Routes = [
   {path: 'orders', component: OrdersComponent},
   {path: 'detail/:id', component: OrderDetailsComponent},
   {path: 'clients', component: ClientsListComponent},
-  {path: 'products', component: ProductsListComponent}
+  {path: 'products', component: ProductsListComponent},
+  {path: '404', component: PageNotFoundComponent},
+  { path: '**', redirectTo: '404', pathMatch: 'full' }
 
 
 

@@ -24,6 +24,8 @@ import { ClientsListComponent } from './components/clients-list/clients-list.com
 import {NgxPaginationModule} from 'ngx-pagination';
 import { MatChipsModule } from '@angular/material/chips';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
 
 
 
@@ -37,7 +39,8 @@ import { ProductsListComponent } from './components/products-list/products-list.
     OrdersComponent,
     OrderDetailsComponent,
     ClientsListComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    PageNotFoundComponent
     
     
    
