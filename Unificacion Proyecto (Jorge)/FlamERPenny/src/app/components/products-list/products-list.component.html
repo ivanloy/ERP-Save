@@ -28,13 +28,13 @@
   <!-- stock Column -->
   <ng-container cdkColumnDef="stock">
     <th cdk-header-cell *cdkHeaderCellDef>Stock</th>
-    <td cdk-cell *cdkCellDef="let row"> {{row.stock}} </td>
+    <td cdk-cell *cdkCellDef="let row" [class.outofstock]="row.stock === 0"> {{row.stock}} </td>
   </ng-container>
 
   <!-- descripcion Column -->
   <ng-container cdkColumnDef="descripcion">
     <th cdk-header-cell *cdkHeaderCellDef>Description</th>
-    <td cdk-cell *cdkCellDef="let row" [class.outofstock]="row.stock === 0"> {{row.descripcion}} </td>
+    <td cdk-cell *cdkCellDef="let row"> {{row.descripcion}} </td>
   </ng-container>
 
   <!-- listaCategorias Column -->
