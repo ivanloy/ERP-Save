@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 
 body {
     position: relative;
@@ -40,7 +42,7 @@ body {
   
   }
   
-  .ordertable{
+  .productstable{
   
   margin: auto;
   width: 100%;
@@ -101,4 +103,11 @@ body {
   
     font-size: 32px;
     
+  }
+
+  .outofstock{
+
+    color: var(--rojo);
+    font-weight: bold;
+
   }

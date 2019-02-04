@@ -8,7 +8,7 @@
 
 
 <div class="tablecontainer">
-<table cdk-table [dataSource]="dataOnPage$" class="table table-striped">
+<table cdk-table [dataSource]="dataOnPage$" class="productstable">
 
   <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
   <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>
@@ -34,7 +34,7 @@
   <!-- descripcion Column -->
   <ng-container cdkColumnDef="descripcion">
     <th cdk-header-cell *cdkHeaderCellDef>Description</th>
-    <td cdk-cell *cdkCellDef="let row"> {{row.descripcion}} </td>
+    <td cdk-cell *cdkCellDef="let row" [class.outofstock]="row.stock === 0"> {{row.descripcion}} </td>
   </ng-container>
 
   <!-- listaCategorias Column -->
