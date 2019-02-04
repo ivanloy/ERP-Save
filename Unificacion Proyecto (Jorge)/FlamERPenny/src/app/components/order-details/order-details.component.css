@@ -63,15 +63,15 @@ body {
   
   margin: auto;
   width: 100%;
-  height: 50vh;
+
   
   }
   
   .tablecontainer{
   
-    overflow-y:scroll;
+  overflow-y:scroll;
   height: 50vh;
-  
+  border-collapse: collapse;
   }
   
   th{
@@ -87,6 +87,7 @@ body {
     font-size: 20px;
     color: var(--gris);
     overflow: hidden;
+    vertical-align: baseline;
   }
 
   .total{

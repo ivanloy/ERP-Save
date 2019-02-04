@@ -16,23 +16,10 @@ export class ProductsListComponent implements OnInit {
   public dataSource$ : Observable<Product[]>;
   public columns = ['nombre', 'precioVenta', 'descripcion', 'stock', 'listaCategorias'];
 
-  public currentPage$ = new BehaviorSubject<number>(1);
-  public dataOnPage$ = new Observable<Product[]>();
-
-  public pageSize = 12;
-
   constructor(private productsService : ProductService) { }
 
   ngOnInit() {
     this.getProducts();
-
-    this.dataOnPage$ = this.currentPage$.pipe(
-      switchMap(() => this.dataSource$),
-      map(v => {
-        const jdx = (this.currentPage$.value - 1) * this.pageSize;
-        return Object.values(v).slice(jdx, jdx + this.pageSize)
-      })
-    )
   }
 
   getProducts() : void {

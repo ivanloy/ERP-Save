@@ -14,6 +14,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { HttpClientModule } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
@@ -68,7 +69,8 @@ import { ProductsListComponent } from './components/products-list/products-list.
     HttpClientModule,
     CdkTableModule,
     NgxPaginationModule,
-    MatChipsModule
+    MatChipsModule,
+    NgbModule.forRoot()
     
   ],
   providers: [AuthService, OrderService, ProductService],
