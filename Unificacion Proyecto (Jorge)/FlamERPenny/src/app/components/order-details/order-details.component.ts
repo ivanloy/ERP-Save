@@ -11,6 +11,7 @@ import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';
 import { PedidoGlobal } from 'src/app/models/PedidoGlobal';
 import { Alert } from 'selenium-webdriver';
 import { OrderService } from 'src/app/service/order.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 export interface Food {
@@ -50,6 +51,8 @@ export class OrderDetailsComponent implements OnInit {
   CantidadCompare : any;
   totalprice : any = 0;
 
+  public ProgresBar : any;
+
   private fechaSelecionada: Date = new Date();
 
   flecha: any;
@@ -59,7 +62,7 @@ export class OrderDetailsComponent implements OnInit {
 
 
 
-  constructor(public miOrderService: OrderService,private httpClient:HttpClient,private route: ActivatedRoute,) { }
+  constructor(public miOrderService: OrderService,private httpClient:HttpClient,private route: ActivatedRoute,private modalService: NgbModal) { }
 
   public ngOnInit() {
     
@@ -67,19 +70,22 @@ export class OrderDetailsComponent implements OnInit {
     this.miLineasDePedido = this.miOrderService.getInfoLineas(this.id);
 
     this.miOrderService.getInfoLineas(this.id).subscribe(result =>{
+
         this.miLineasDePedido2 = JSON.stringify(result)
         this.miLineasDePedido3 = JSON.parse(this.miLineasDePedido2);
+
+        
 
         for(var i = 0; i < this.miLineasDePedido3.length; i++){
 
           this.totalprice += parseFloat(this.miLineasDePedido3[i].subtotal.toString());
     
-        }
-        
-
+        }     
+          
     })
 
-    
+   
+
 
     this.miOrderService.getInfoPrductGeneral().subscribe(result =>{
 
@@ -96,9 +102,13 @@ export class OrderDetailsComponent implements OnInit {
       });
 
 
+      
+      
   }
 
-  public Open(){
+  public Open(content){
+
+    this.modalService.open(content, { centered: true });
 
     for(var i = 0; i< this.miLineasDePedido3.length; i++){
 

@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatProgressBar, MatProgressBarModule, MatSelectModule} from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatSelectModule, MatProgressBarModule, MatFormFieldModule} from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -25,6 +25,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { MatChipsModule } from '@angular/material/chips';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -40,7 +41,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     OrderDetailsComponent,
     ClientsListComponent,
     ProductsListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
     
     
    
@@ -73,9 +74,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     CdkTableModule,
     NgxPaginationModule,
     MatChipsModule,
-    NgbModule.forRoot(),
     MatProgressBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatFormFieldModule,
+    NgbModule
     
   ],
   providers: [AuthService, OrderService, ProductService],

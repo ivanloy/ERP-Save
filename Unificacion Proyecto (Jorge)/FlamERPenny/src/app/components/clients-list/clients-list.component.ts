@@ -13,6 +13,7 @@ export class ClientsListComponent implements OnInit {
 
   public dataSource$ : Observable<Client[]>;
   public columns = ['id', 'nombre'];
+  public ProgresBar : any;
 
   public currentPage$ = new BehaviorSubject<number>(1);
   public dataOnPage$ = new Observable<Client[]>();
@@ -24,6 +25,7 @@ export class ClientsListComponent implements OnInit {
   ngOnInit() {
     this.getClients();
 
+    
     this.dataOnPage$ = this.currentPage$.pipe(
       switchMap(() => this.dataSource$),
       map(v => {
@@ -31,6 +33,12 @@ export class ClientsListComponent implements OnInit {
         return Object.values(v).slice(jdx, jdx + this.pageSize)
       })
     )
+
+    this.currentPage$.subscribe(
+      result =>{
+        
+       this.ProgresBar = document.getElementById('DivProgres').setAttribute('hidden','hidden');}
+      )
   }
 
   getClients() : void {

@@ -5,8 +5,22 @@
     <div class="headercontainer">
 
         <div class="buttoncontainer">
-            <button class="newbutton" (click) = "Open()">NEW</button>
+            <button class="newbutton" (click) = "Open(content)">NEW</button>
         </div>
+        <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title">Modal title</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+            </div>
+          </ng-template>
       
        <p class="pagename">ORDERS DETAILS</p>
       
@@ -107,6 +121,34 @@
 
     </table>
 
+    <div id="NewProduct" hidden>
+
+      
+              <mat-form-field>
+                <mat-select [(value)]="selected" (selectionChange)="ProductoSeleccionado(selected)">
+                  <mat-option *ngFor="let p of ArrayDeProductos" [value]="p.id">
+                    {{p.nombre}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+      
+        
+        
+            <input id="descrip" type="text" placeholder="Description"/>
+            <input id="categories" type="text" placeholder="Categories"/>
+
+            <input id="cantidad" (focusout) = "CalcularCantidad()" type="text" placeholder="Units"/>
+            <label id="stockdispo"></label>        
+            <input id="precio" (focusout) = "CalcularCantidad()" type="text"/>
+            <input id="impuestos" type="text" value="0.21"/>
+
+            <p>Subtotal: {{SubTotal}}</p>
+        
+        
+            <button (click) = "save()"> SAVE </button>
+        
+        </div>
+
   </div>
   <hr>
   <div class="total">
@@ -114,40 +156,7 @@
   </div>
 
 
-  <div id="NewProduct" hidden>
-
-      <div style="margin-top: 15px" id="NuevaLineaPedido">
-  <label> Escoja un producto:</label>
-        <mat-form-field>
-          <mat-select [(value)]="selected" (selectionChange)="ProductoSeleccionado(selected)">
-            <mat-option *ngFor="let p of ArrayDeProductos" [value]="p.id">
-              {{p.nombre}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field><br>
-      </div>
   
-  
-  
-      <label> Descripcion:</label>
-      <input id="descrip" type="text"/><br>
-      <label> Lista de categorias: </label>
-      <input id="categories" type="text"/><br>
-      <label> Cantidad: </label>
-      <input id="cantidad" (focusout) = "CalcularCantidad()" type="text"/>
-      <label>Stock disponible:</label>
-      <label id="stockdispo"></label><br>
-      <label> Precio Unitario: </label>
-      <input id="precio" (focusout) = "CalcularCantidad()" type="text"/><br>
-      <label> impuestos: </label>
-      <input id="impuestos" type="text" value="0.21"/><br>
-      <label> Subtotal: </label>
-      <p>{{SubTotal}}</p><br>
-  
-  
-      <button (click) = "save()"> SAVE </button>
-  
-  </div>
 
   <div id="EditarPro" hidden>
 

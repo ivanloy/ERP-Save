@@ -1,4 +1,38 @@
 
+::ng-deep .mat-option {
+
+  box-shadow: 6px 6px 6px var(--negroT);
+  background-color: var(--blanco);
+  position: relative;
+  margin: auto;
+  font-family: 'bah';
+  color: var(--gris); 
+
+    width: 20vh;
+
+}
+
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: var(--marron);
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: #E4E8EB;
+}
+
+::ng-deep .mat-progress-bar {
+  border-radius: 2px;
+}
+
+#DivProgres{
+
+  margin: auto;
+  margin-top: 20vh;
+  width: 50vw;
+  
+  }
+
 body {
     position: relative;
     margin: auto;

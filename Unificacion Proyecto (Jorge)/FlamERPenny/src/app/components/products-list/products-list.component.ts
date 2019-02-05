@@ -13,6 +13,8 @@ import { Product } from 'src/app/models/product';
 })
 export class ProductsListComponent implements OnInit {
 
+  public ProgresBar : any;
+
   public dataSource$ : Observable<Product[]>;
   public columns = ['nombre', 'precioVenta', 'descripcion', 'stock', 'listaCategorias'];
 
@@ -20,6 +22,13 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit() {
     this.getProducts();
+
+    this.dataSource$.subscribe(
+      result =>{
+        
+       this.ProgresBar = document.getElementById('DivProgres').setAttribute('hidden','hidden');}
+      )
+
   }
 
   getProducts() : void {
