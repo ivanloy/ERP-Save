@@ -156,8 +156,8 @@ export class OrderDetailsComponent implements OnInit {
   
       this.max = this.p.stock.toString();
 
-      document.getElementById('descrip').setAttribute('value',this.p.descripcion.toString());
-      document.getElementById('descrip').setAttribute('readonly','readonly');
+      //document.getElementById('descrip').setAttribute('value',this.p.descripcion.toString());
+      //document.getElementById('descrip').setAttribute('readonly','readonly');
 
       document.getElementById('categories').setAttribute('value',this.p.listaCategorias[0].nombre);
       document.getElementById('categories').setAttribute('readonly','readonly');
@@ -167,8 +167,8 @@ export class OrderDetailsComponent implements OnInit {
       document.getElementById('precio').setAttribute('value',this.p.precioVenta);
       
 
-      document.getElementById('impuestos').setAttribute('value','0.21');
-      document.getElementById('impuestos').setAttribute('readonly','readonly');
+      //document.getElementById('impuestos').setAttribute('value','0.21');
+      //document.getElementById('impuestos').setAttribute('readonly','readonly');
 
       document.getElementById('stockdispo').innerText = this.p.stock.toString();
 

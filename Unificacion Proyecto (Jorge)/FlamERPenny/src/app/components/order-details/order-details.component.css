@@ -1,4 +1,22 @@
 
+
+#NewProduct{
+
+  float: left;
+
+  margin: auto;
+
+
+}
+
+.nuevaLinea{
+
+
+
+}
+
+
+
 ::ng-deep .mat-option {
 
   box-shadow: 6px 6px 6px var(--negroT);
