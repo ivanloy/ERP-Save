@@ -2,7 +2,20 @@
 <body>
 <div class="div-home">
 
-  <p class="pagename">ORDER DETAILS</p>
+    <div class="headercontainer">
+
+        <div class="buttoncontainer">
+            <button class="newbutton" (click) = "Open()">NEW</button>
+        </div>
+      
+       <p class="pagename">ORDERS DETAILS</p>
+      
+      
+       <div class="searchcontainer">
+          <button class="newbutton" class="send">SEND</button>
+         </div>
+      
+      </div>
 
   <hr>
 
@@ -23,7 +36,19 @@
             <p>Order date : {{Data.fechaPedido | date: 'dd/MM/yyyy'}}</p>
         </ul>
         <ul>
-            <p>Dispatch Date : {{Data.fechaEntrega | date: 'dd/MM/yyyy'}}</p>
+            <p (click)="CambiarFecha(Data.fechaEntrega)">Dispatch Date : {{Data.fechaEntrega | date: 'dd/MM/yyyy'}}</p>
+            <div id="fecha" hidden>
+
+              <ul> 
+
+                  <input id="fechaSelect" value ="2019-01-01" type="date" name="bday">
+                  <input id="horaSelect" value="00:00" type="time" name="tday">
+                  
+                  <button (click) ="helow()"> Editar </button>
+              </ul>
+
+
+          </div>
         </ul>
     </div> 
   </div>
@@ -52,9 +77,9 @@
       </ng-container>
     
       <!-- stock Column -->
-      <ng-container cdkColumnDef="stock">
-        <th cdk-header-cell *cdkHeaderCellDef>Stock</th>
-        <td cdk-cell *cdkCellDef="let row"> {{row.producto.stock}} </td>
+      <ng-container cdkColumnDef="cantidad">
+        <th cdk-header-cell *cdkHeaderCellDef>Units</th>
+        <td cdk-cell *cdkCellDef="let row"> {{row.cantidad}} </td>
       </ng-container>
 
       <ng-container cdkColumnDef="precioUnitario">
@@ -75,7 +100,8 @@
       <ng-container cdkColumnDef="Acciones">
         <th cdk-header-cell *cdkHeaderCellDef>Options</th>
         <td cdk-cell *cdkCellDef="let row">
-          <i value="Editar" (click)="Borrar(row.idPedido)" class="material-icons">delete</i>
+          <i value="Borrar" (click)="Borrar(row.idPedido)" class="material-icons">delete</i>
+          <i value="Editar"  (click)="Editar(row.idProducto)" class="material-icons">edit</i>
         </td>
       </ng-container>
 
@@ -84,8 +110,60 @@
   </div>
   <hr>
   <div class="total">
-    <p>TOTAL: {{preciototal}}</p>
+    <p>TOTAL: {{totalprice}}</p>
   </div>
+
+
+  <div id="NewProduct" hidden>
+
+      <div style="margin-top: 15px" id="NuevaLineaPedido">
+  <label> Escoja un producto:</label>
+        <mat-form-field>
+          <mat-select [(value)]="selected" (selectionChange)="ProductoSeleccionado(selected)">
+            <mat-option *ngFor="let p of ArrayDeProductos" [value]="p.id">
+              {{p.nombre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+      </div>
+  
+  
+  
+      <label> Descripcion:</label>
+      <input id="descrip" type="text"/><br>
+      <label> Lista de categorias: </label>
+      <input id="categories" type="text"/><br>
+      <label> Cantidad: </label>
+      <input id="cantidad" (focusout) = "CalcularCantidad()" type="text"/>
+      <label>Stock disponible:</label>
+      <label id="stockdispo"></label><br>
+      <label> Precio Unitario: </label>
+      <input id="precio" (focusout) = "CalcularCantidad()" type="text"/><br>
+      <label> impuestos: </label>
+      <input id="impuestos" type="text" value="0.21"/><br>
+      <label> Subtotal: </label>
+      <p>{{SubTotal}}</p><br>
+  
+  
+      <button (click) = "save()"> SAVE </button>
+  
+  </div>
+
+  <div id="EditarPro" hidden>
+
+ 
+      <label> Cantidad: </label>
+      <input id="cantidadE" (focusout) = "CalcularCantidadEditar()" type="text"/>
+      <label>Cantidad ampliable:</label>
+      <label id="stockdispoE"></label><br>
+      <label> Precio Unitario: </label>
+      <input id="precioE" (focusout) = "CalcularCantidadEditar()" type="text"/><br>
+      <label> Subtotal: </label>
+      <p>{{SubTotalEdit}}</p><br><br>
+
+      <button (click) = "Actualizar()"> SAVE </button>
+    
+    </div>
 
   
 

@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatProgressBar, MatProgressBarModule, MatSelectModule} from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -73,7 +73,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     CdkTableModule,
     NgxPaginationModule,
     MatChipsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MatProgressBarModule,
+    MatSelectModule
     
   ],
   providers: [AuthService, OrderService, ProductService],

@@ -11,6 +11,8 @@ import { RouterLink } from '@angular/router';
 export class OrdersComponent implements OnInit {
   public columns = ['fechaPedido','fechaEntrega','nombreCliente','nombreVendedor','totalPedido','Acciones'];
 
+  public ProgresBar : any;
+  Loading : boolean;
   Pedidos : Observable<any[]>;
 
   constructor(public miOrderService: OrderService) { }
@@ -18,13 +20,37 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
 
     this.Pedidos = this.miOrderService.getInfoPrduct();
+
+    this.Pedidos.subscribe(
+      result =>{
+        if(this.Pedidos)
+       this.ProgresBar = document.getElementById('DivProgres').setAttribute('hidden','hidden');}
+      )
   }
 
-  Borrar(id){
-    
-    this.miOrderService.deleteOrder(id).subscribe(result=>{
-      console.log(result)
-      this.Pedidos = this.miOrderService.getInfoPrduct();
-    })
+  //Metodo el cual nos borrara el pedido que hayamos seleccionado
+  Borrar(id,fechaEntrega){
+
+
+    var fecha = new Date();
+    fecha = fechaEntrega
+    let fechaNull = new Date(fecha);
+    let year = fechaNull.getFullYear();
+  
+    if(year != 1){
+      this.miOrderService.deleteOrder(id).subscribe(result=>{
+        console.log(result)
+        this.Pedidos = this.miOrderService.getInfoPrduct();
+      })
+
+      alert('Borrado correctamente')
+
+    }else{
+      alert('No puedes borrar pedidos sin fecha de entrega')
+    }
+
+   
+
+   
   }
 }
